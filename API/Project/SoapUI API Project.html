@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ReadyAPI Test Case Report - GitHub SSH Keys API</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #f4f6f7; }
+        .pass { color: green; font-weight: bold; }
+        .fail { color: red; font-weight: bold; }
+        .summary { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<h1>ReadyAPI – JUnit Style Test Case Report</h1>
+
+<h2>Project Information</h2>
+<table>
+    <tr><th>Project Name</th><td>GitHub API – SSH Keys Automation</td></tr>
+    <tr><th>Test Suite</th><td>User SSH Keys Test Suite</td></tr>
+    <tr><th>Test Case</th><td>Add, Get and Delete SSH Key</td></tr>
+    <tr><th>Execution Date</th><td>2026-01-17</td></tr>
+    <tr><th>Tool</th><td>ReadyAPI / SOAP UI</td></tr>
+</table>
+
+<h2>Test Steps Execution</h2>
+<table>
+    <tr>
+        <th>Step #</th>
+        <th>Test Step Name</th>
+        <th>HTTP Method</th>
+        <th>Endpoint</th>
+        <th>Expected Status</th>
+        <th>Actual Status</th>
+        <th>Result</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Add SSH Key</td>
+        <td>POST</td>
+        <td>https://api.github.com/user/keys</td>
+        <td>201</td>
+        <td>201</td>
+        <td class="pass">PASS</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Get SSH Key</td>
+        <td>GET</td>
+        <td>https://api.github.com/user/keys/{keyId}</td>
+        <td>200</td>
+        <td>200</td>
+        <td class="pass">PASS</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Delete SSH Key</td>
+        <td>DELETE</td>
+        <td>https://api.github.com/user/keys/{keyId}</td>
+        <td>204</td>
+        <td>204</td>
+        <td class="pass">PASS</td>
+    </tr>
+</table>
+
+<h2>Assertions Summary</h2>
+<table>
+    <tr><th>Assertion Name</th><th>Type</th><th>Status</th></tr>
+    <tr><td>Valid HTTP Status Code</td><td>Status Code Assertion</td><td class="pass">PASS</td></tr>
+    <tr><td>Response SLA</td><td>Removed</td><td class="pass">N/A</td></tr>
+</table>
+
+<div class="summary">
+    <h2>Execution Summary</h2>
+    <p><strong>Total Test Steps:</strong> 3</p>
+    <p><strong>Passed:</strong> 3</p>
+    <p><strong>Failed:</strong> 0</p>
+    <p><strong>Overall Result:</strong> <span class="pass">SUCCESS</span></p>
+</div>
+
+<h2>Notes</h2>
+<ul>
+    <li>OAuth 2.0 authentication used with GitHub Personal Access Token.</li>
+    <li>SSH public key successfully added, retrieved, and deleted.</li>
+    <li>Key ID transferred between requests using Property Transfer TestStep.</li>
+</ul>
+
+</body>
+</html>
